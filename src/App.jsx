@@ -4,6 +4,20 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
+function FormularioDeEvento () {
+
+  return (
+    <form className="form-evento">
+      <h2>Preencha para criar um evento:</h2>
+      <fieldset>
+        <label htmlFor='nome'>
+          Qual o nome do evento?
+        </label>
+      </fieldset>
+    </form>
+  )
+}
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -15,7 +29,7 @@ function App() {
       <section>
         <img src="/banner.png" alt="Banner do Tecboard"/>
       </section>
-
+      <FormularioDeEvento />
     </main>
   )
 }
