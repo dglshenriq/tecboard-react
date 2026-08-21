@@ -2,11 +2,11 @@ import './card-evento.estilos.css'
 
 export function CardEvento ({evento}) {
     return(
-        <div class='card-evento'>
+        <div className='card-evento'>
             <img src={evento.capa} alt={evento.titulo}/>
             <div className='corpo'>
                 <p className='tag'>{evento.tema.nome}</p>
-                <p>
+                <p className='data'>
                     {evento.data.toLocaleDateString('pt-BR')}
                 </p>
                 <h4 className='titulo'>
