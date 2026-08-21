@@ -6,6 +6,7 @@ import "./App.css";
 import { FormularioDeEvento } from "./components/FormularioDeEvento";
 import { Tema } from "./components/Tema";
 import { Banner } from "./components/Banner";
+import { CardEvento } from "./components/CardEvento";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -16,6 +17,14 @@ function App() {
     { id: 4, nome: "inteligência artificial" },
     { id: 5, nome: "data science" },
     { id: 6, nome: "cloud" },
+  ];
+  const eventos = [
+    {
+      capa: "#",
+      tema: temas[0],
+      data: new Date(),
+      titulo: "Mulheres no Front",
+    },
   ];
 
   return (
@@ -29,6 +38,7 @@ function App() {
         return (
           <section key={item.id}>
             <Tema tema={item} />
+            <CardEvento evento={eventos[0]} />
           </section>
         );
       })}
