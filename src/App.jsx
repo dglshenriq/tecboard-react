@@ -18,18 +18,17 @@ function App() {
     { id: 5, nome: "data science" },
     { id: 6, nome: "cloud" },
   ];
-  const eventos = [
+  const [eventos, setEventos] = useState([
     {
       capa: "#",
       tema: temas[0],
       data: new Date(),
       titulo: "Mulheres no Front",
     },
-  ];
+  ]);
 
   function adicionarEvento(evento) {
-    eventos.push(evento);
-    console.log("eventos =>", eventos);
+    setEventos([...eventos, evento]);
   }
 
   return (
