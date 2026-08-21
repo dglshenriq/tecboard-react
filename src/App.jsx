@@ -4,18 +4,44 @@ import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "./App.css";
 import { FormularioDeEvento } from "./components/FormularioDeEvento";
+import { Tema } from "./components/Tema";
+import { Banner } from "./components/Banner";
+import { CardEvento } from "./components/CardEvento";
 function App() {
   const [count, setCount] = useState(0);
+
+  const temas = [
+    { id: 1, nome: "front-end" },
+    { id: 2, nome: "back-end" },
+    { id: 3, nome: "devops" },
+    { id: 4, nome: "inteligência artificial" },
+    { id: 5, nome: "data science" },
+    { id: 6, nome: "cloud" },
+  ];
+  const eventos = [
+    {
+      capa: "#",
+      tema: temas[0],
+      data: new Date(),
+      titulo: "Mulheres no Front",
+    },
+  ];
 
   return (
     <main>
       <header>
         <img src="/logo.png" alt="Logo do Tecboard na cor branca" />
       </header>
-      <section>
-        <img src="/banner.png" alt="Banner do Tecboard" />
-      </section>
+      <Banner />
       <FormularioDeEvento />
+      {temas.map(function (item) {
+        return (
+          <section key={item.id}>
+            <Tema tema={item} />
+            <CardEvento evento={eventos[0]} />
+          </section>
+        );
+      })}
     </main>
   );
 }
