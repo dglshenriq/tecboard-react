@@ -33,7 +33,7 @@ function App() {
         <img src="/logo.png" alt="Logo do Tecboard na cor branca" />
       </header>
       <Banner />
-      <FormularioDeEvento />
+      <FormularioDeEvento temas={temas} />
       {temas.map(function (item) {
         return (
           <section key={item.id}>
